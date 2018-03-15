@@ -1,0 +1,124 @@
+commit aec0a26c6fa78448db612575681075fbc69969ef
+Author: Elli Mansikka <elli.mansikka@helsinki.fi>
+Date:   Wed Mar 14 17:32:55 2018 +0200
+
+    poistetiin 1 ja 2
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit d386262c6e78638eec5dc0718ac437467bb4f2c2
+Author: Elli Mansikka <elli.mansikka@helsinki.fi>
+Date:   Wed Mar 14 17:30:46 2018 +0200
+
+    poistetiin 1 ja muutettiin 2 22
+
+ tiedostoja/file22 | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 95226385fec9845f1acd01d71edc94004111a7be
+Author: Elli Mansikka <elli.mansikka@helsinki.fi>
+Date:   Wed Mar 14 17:24:14 2018 +0200
+
+    luotiin
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 06e9eff4bbf417db9cf44f778e872ffdd618f0d3
+Author: Elli Mansikka <elli.mansikka@helsinki.fi>
+Date:   Wed Mar 14 17:13:36 2018 +0200
+
+    muutoksia ekassa ja kolmannessa
+
+ eka.txt    | 4 ++--
+ kolmas.txt | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 4392f508c6f503e903490c4ec14e8675375dd006
+Author: Elli Mansikka <elli.mansikka@helsinki.fi>
+Date:   Wed Mar 14 17:10:15 2018 +0200
+
+    tiedostopois
+
+ tiedosto.txt | 3 ---
+ 1 file changed, 3 deletions(-)
+
+commit b775a98c912b740288464e74871eb1f122e70277
+Author: Elli Mansikka <elli.mansikka@helsinki.fi>
+Date:   Wed Mar 14 17:05:00 2018 +0200
+
+    tiedosto.txt muutettu eka.txt:ksi
+
+ eka.txt    | 3 +++
+ toinen.txt | 1 -
+ 2 files changed, 3 insertions(+), 1 deletion(-)
+
+commit 6daab2a24489a39f8addf44a24fb9a3966d8ce1f
+Author: Elli Mansikka <elli.mansikka@helsinki.fi>
+Date:   Wed Mar 14 16:59:39 2018 +0200
+
+    tiedosto.txt muokattu, poistettu ja lisätty tekstiä
+
+ tiedosto.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 283706ca8a072ac3fa5f86b7f15f33ec160aa16b
+Author: Elli Mansikka <elli.mansikka@helsinki.fi>
+Date:   Wed Mar 14 16:57:26 2018 +0200
+
+    tiedosto.txt muokattu
+
+ tiedosto.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit fd290afd29b86c2470752bedf54fdb7b9acfd6eb
+Author: Elli Mansikka <elli.mansikka@helsinki.fi>
+Date:   Wed Mar 14 16:42:45 2018 +0200
+
+    uusi hakemisto ja tiedosto jee.txt luotu
+
+ stuff/jee.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 3b191f3faa5670c20c30bb32d7a25a4fcd26ab15
+Author: Elli Mansikka <elli.mansikka@helsinki.fi>
+Date:   Wed Mar 14 16:40:05 2018 +0200
+
+    muutoksia tehty
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 2d59f86074a968f4e755948f6efbe0977d9c5303
+Author: Elli Mansikka <elli.mansikka@helsinki.fi>
+Date:   Wed Mar 14 16:35:30 2018 +0200
+
+    kolmas.txt luotu
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 70a1c434869b26292ceacf0877ee0c6dd922700a
+Author: Elli Mansikka <elli.mansikka@helsinki.fi>
+Date:   Wed Mar 14 16:26:27 2018 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit f1a68538959726fe6c82e9e727bf8d524fa5902e
+Author: Elli Mansikka <elli.mansikka@helsinki.fi>
+Date:   Wed Mar 14 16:20:04 2018 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
