@@ -3,7 +3,7 @@ Harjoitustyö kurssille Ohjelmistotekniikan menetelmät. Dating Simulator on pel
 ## Dokumentaatio
 [alustava_maarittelydokumentti.md](https://github.com/ellimansikka/otm-harjoitustyo/blob/master/dokumentointi/alustava_maarittelydokumentti.md)
 
-[tuntikirjanpito.md](https://github.com/ellimansikka/otm-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
+[tuntikirjanpito.md](https://github.com/ellimansikka/otm-harjoitustyo/blob/master/dokumentointi/tuntikirjanpito.md)
 
 ## Komentorivitoiminnot
 ### Testaus
