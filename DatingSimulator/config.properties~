@@ -1,2 +1,4 @@
-pelaajaFile=pelaajat.txt
-tulosFile=tulokset.txt
+playerFile=players.txt
+resultFile=results.txt
+storyFile=story.txt
+answersFile=story_answers.txt

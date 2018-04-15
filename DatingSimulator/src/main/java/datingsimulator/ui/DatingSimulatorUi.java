@@ -24,6 +24,9 @@ import javafx.stage.Stage;
 import javafx.scene.layout.FlowPane;
 import datingsimulator.dao.FileResultDao;
 import datingsimulator.dao.FilePlayerDao;
+import datingsimulator.dao.StoryReader;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.stage.WindowEvent;
 
 
@@ -35,6 +38,8 @@ public class DatingSimulatorUi extends Application {
     private Scene resultsScene;
     private Scene loginScene;
     private Scene newPlayerScene;
+    private Scene gameScene;
+    private StoryReader storyReader;
     
     
      @Override
@@ -45,9 +50,12 @@ public class DatingSimulatorUi extends Application {
         
         String playerFile = properties.getProperty("playerFile");
         String resultFile = properties.getProperty("resultFile");
+        String storyFile = properties.getProperty("storyFile");
+        String finalAnswersFile = properties.getProperty("finalAnswersFile");
             
         FilePlayerDao playerDao = new FilePlayerDao(playerFile);
         FileResultDao resultDao = new FileResultDao(resultFile, playerDao);
+        storyReader = new StoryReader(storyFile, finalAnswersFile);
         service = new PlayerService(resultDao, playerDao);
     }
     
@@ -149,6 +157,27 @@ public class DatingSimulatorUi extends Application {
         });        
         
         mainPane.setTop(menuPane);
+        
+        // game scene
+        
+        VBox gamePane = new VBox(10);
+        HBox responsePane = new HBox(10);
+        responsePane.setPadding(new Insets(10));
+        
+        
+        playButton.setOnAction(e->{
+            try {
+                String dateReply = storyReader.getDatesReply(1);
+                Label date = new Label(dateReply);
+            } catch (Exception ex) {
+            }
+            Button button1 = new Button();
+            Button button2 = new Button();
+            Button button3 = new Button();
+            
+        });
+        
+        
         
         // seutp primary stage
         
