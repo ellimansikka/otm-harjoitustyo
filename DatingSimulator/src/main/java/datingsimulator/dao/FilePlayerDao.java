@@ -1,4 +1,3 @@
-
 package datingsimulator.dao;
 
 import java.io.File;
@@ -9,9 +8,10 @@ import java.util.Scanner;
 import datingsimulator.domain.Player;
 
 public class FilePlayerDao implements PlayerDao {
+
     private List<Player> players;
     private String file;
-    
+
     public FilePlayerDao(String file) throws Exception {
         players = new ArrayList<>();
         this.file = file;
@@ -26,29 +26,28 @@ public class FilePlayerDao implements PlayerDao {
             FileWriter writer = new FileWriter(new File(file));
             writer.close();
         }
-        
+
     }
-    
-    private void save() throws Exception{
+
+    private void save() throws Exception {
         try (FileWriter writer = new FileWriter(new File(file))) {
             for (Player player : players) {
                 writer.write(player.getName());
             }
-        } 
+        }
     }
-    
+
     @Override
     public List<Player> getAll() {
         return players;
     }
-    
-    
+
     public Player create(Player player) throws Exception {
         players.add(player);
         save();
         return player;
-    }  
-    
+    }
+
     public Player findPlayer(String name) {
 //        Player p = null;
 //        for (Player player : players) {
@@ -60,10 +59,10 @@ public class FilePlayerDao implements PlayerDao {
 //        }
 //        return p;
         return players.stream()
-            .filter(u->u.getName()
-            .equals(name))
-            .findFirst()
-            .orElse(null);
+                .filter(u -> u.getName()
+                        .equals(name))
+                .findFirst()
+                .orElse(null);
     }
-    
+
 }
