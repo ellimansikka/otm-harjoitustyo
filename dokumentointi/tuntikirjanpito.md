@@ -8,4 +8,5 @@ Päivä | Aika(h) | Mitä tein
 14.4.| 2 | alustavan tarinan luominen ja sen lukevan luokan toteutus
 15.4. | 0.5 | alustavan pakkaus- ja luokka kaavion tekeminen
 16.4. | 2 | Sovelluslogiikan tekeminen
-17.4. | 2 | Testien lisääminen ja muu sovelluksen kehittäminen
+17.4. | 2 | Testien lisääminen
+17.4. | 1 | Sovelluksen kehittäminen
