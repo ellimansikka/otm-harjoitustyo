@@ -20,17 +20,16 @@ public class FileResultDao implements ResultDao {
             Scanner reader = new Scanner(new File(file));
             while (reader.hasNextLine()) {
                 String[] parts = reader.nextLine().split(";");
-                int id = Integer.parseInt(parts[0]);
-                int result = Integer.parseInt(parts[1]);
-                Player p = null;
+                int result = Integer.parseInt(parts[0]);
+                String p = null;
                 for (Player player : players.getAll()) {
-                    if (player.getName().equals(parts[2])) {
-                        p = player;
+                    if (player.getName().equals(parts[1])) {
+                        p = player.getName();
                     } else {
                         p = null;
                     }
                 }
-                Result r = new Result(id, result, p);
+                Result r = new Result(result, p);
                 results.add(r);
             }
         } catch (Exception e) {
@@ -42,13 +41,9 @@ public class FileResultDao implements ResultDao {
     private void save() throws Exception {
         try (FileWriter writer = new FileWriter(new File(file))) {
             for (Result result : results) {
-                writer.write(result.getId() + ";" + result.getResult() + ";" + result.getPlayer().getName() + "\n");
+                writer.write(result.getResult() + ";" + result.getPlayerName() + "\n");
             }
         }
-    }
-
-    private int createId() {
-        return results.size() + 1;
     }
 
     @Override
@@ -57,7 +52,6 @@ public class FileResultDao implements ResultDao {
     }
 
     public Result create(Result result) throws Exception {
-        result.setId(createId());
         results.add(result);
         save();
         return result;

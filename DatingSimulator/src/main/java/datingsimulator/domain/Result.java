@@ -2,12 +2,10 @@ package datingsimulator.domain;
 
 public class Result {
 
-    private int id;
     private int result;
-    private Player player;
+    private String player;
 
-    public Result(int id, int result, Player player) {
-        this.id = id;
+    public Result(int result, String player) {
         this.result = result;
         this.player = player;
     }
@@ -16,24 +14,8 @@ public class Result {
         return result;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public Player getPlayer() {
+    public String getPlayerName() {
         return player;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (!(obj instanceof Result)) {
-            return false;
-        }
-        Result other = (Result) obj;
-        return id == other.id;
-    }
 }

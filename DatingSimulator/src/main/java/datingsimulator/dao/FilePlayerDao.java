@@ -49,15 +49,6 @@ public class FilePlayerDao implements PlayerDao {
     }
 
     public Player findPlayer(String name) {
-//        Player p = null;
-//        for (Player player : players) {
-//            if (player.getName().equals(name)){
-//                p = player;
-//            } else {
-//                p = null;
-//            }
-//        }
-//        return p;
         return players.stream()
                 .filter(u -> u.getName()
                         .equals(name))
