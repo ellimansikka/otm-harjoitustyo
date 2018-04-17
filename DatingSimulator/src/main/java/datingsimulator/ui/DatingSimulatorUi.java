@@ -39,6 +39,7 @@ public class DatingSimulatorUi extends Application {
     private Scene newPlayerScene;
     private Scene gameScene;
     private StoryReader storyReader;
+    private VBox resultNodes;
 
     @Override
     public void init() throws Exception {
@@ -56,6 +57,27 @@ public class DatingSimulatorUi extends Application {
         storyReader = new StoryReader(storyFile, finalAnswersFile);
         service = new PlayerService(resultDao, playerDao);
     }
+    
+//    public Node createResultNode(Result result) {
+//        HBox box = new HBox(10);
+//        Label label  = new Label(Integer.toString(result.getResult()));
+//        label.setMinHeight(28);
+//        
+//        Region spacer = new Region();
+//        HBox.setHgrow(spacer, Priority.ALWAYS);
+//        box.setPadding(new Insets(0,5,0,5));
+//        
+//        box.getChildren().addAll(label, spacer);
+//        return box;
+//    }
+//    
+//    public void redrawResultList() {
+//        resultNodes.getChildren().clear();
+//        List<Result> results = service.getPlayersResults();
+//        results.forEach(result->{
+//            resultNodes.getChildren().add(createResultNode(result));
+//        });
+//    }
 
     @Override
     public void start(Stage primaryStage) {
@@ -80,7 +102,6 @@ public class DatingSimulatorUi extends Application {
             menuLabel.setText(name + " logged in");
             if (service.logIn(name)) {
                 loginMessage.setText("");
-
                 primaryStage.setScene(playerScene);
                 nameInput.setText("");
             } else {
@@ -149,6 +170,12 @@ public class DatingSimulatorUi extends Application {
             primaryStage.setScene(loginScene);
         });
 
+//        resultNodes = new VBox(10);
+//        resultNodes.setMaxWidth(280);
+//        resultNodes.setMinWidth(280);
+//        redrawResultList();
+//        resultsScollbar.setContent(resultNodes);
+        
         mainPane.setTop(menuPane);
 
         // game scene
@@ -159,12 +186,19 @@ public class DatingSimulatorUi extends Application {
         Button button1 = new Button();
         Button button2 = new Button();
         Button button3 = new Button();
-
-//        playButton.setOnAction(e->{
-//            
-//            
-//            
-//        });
+        Button quitButton = new Button("Quit");
+        
+        responsePane.getChildren().addAll(button1, button2, button3);
+        gamePane.getChildren().addAll(quitButton, responsePane);
+        playButton.setOnAction(e->{
+            primaryStage.setScene(gameScene);
+            
+            
+        });
+        quitButton.setOnAction(e->{
+            primaryStage.setScene(playerScene);
+        });
+        gameScene = new Scene(gamePane, 300, 250);
         // seutp primary stage
         primaryStage.setTitle("Dating Simulator player");
         primaryStage.setScene(loginScene);

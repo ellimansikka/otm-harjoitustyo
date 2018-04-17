@@ -6,6 +6,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import datingsimulator.dao.PlayerDao;
 import datingsimulator.dao.ResultDao;
+import java.util.stream.Collectors;
 
 public class PlayerService {
 
@@ -70,5 +71,16 @@ public class PlayerService {
         }
 
         return true;
+    }
+    
+    public List<Result> getPlayersResults() {
+        if (loggedIn == null) {
+            return new ArrayList<>();
+        }
+          
+        return resultDao.getAll()
+            .stream()
+            .filter(t-> t.getPlayerName().equals(loggedIn.getName()))
+            .collect(Collectors.toList());
     }
 }
