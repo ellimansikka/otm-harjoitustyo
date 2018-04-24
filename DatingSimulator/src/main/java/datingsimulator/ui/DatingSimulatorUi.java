@@ -80,7 +80,7 @@ public class DatingSimulatorUi extends Application {
         box.getChildren().addAll(label, spacer);
         return box;
     }
-//    
+    
 
     public void redrawResultList() {
         resultNodes.getChildren().clear();

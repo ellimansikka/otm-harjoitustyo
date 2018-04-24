@@ -87,10 +87,12 @@ public class PlayerService {
         if (loggedIn == null) {
             return new ArrayList<>();
         }
-
-        return resultDao.getAll()
-                .stream()
-                .filter(r -> r.getPlayerName().equals(loggedIn.getName()))
-                .collect(Collectors.toList());
+        List<Result> results = new ArrayList<>(); 
+        for (Result r : resultDao.getAll()) {
+            if (r.getPlayerName().equals(loggedIn.getName())) {
+                results.add(r);
+            }
+        }
+        return results;
     }
 }

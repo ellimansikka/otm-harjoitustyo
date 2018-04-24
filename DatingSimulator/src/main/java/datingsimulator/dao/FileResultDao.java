@@ -25,8 +25,6 @@ public class FileResultDao implements ResultDao {
                 for (Player player : players.getAll()) {
                     if (player.getName().equals(parts[1])) {
                         p = player.getName();
-                    } else {
-                        p = null;
                     }
                 }
                 Result r = new Result(result, p);
