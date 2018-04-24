@@ -21,3 +21,5 @@ mvn jacoco:report
 
 Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto _target/site/jacoco/index.html_
 
+## GitHub release
+[github release, viikko5](https://github.com/ellimansikka/otm-harjoitustyo/releases/tag/viikko5)
