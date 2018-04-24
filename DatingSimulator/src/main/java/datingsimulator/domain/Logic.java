@@ -12,6 +12,7 @@ public class Logic {
 
     public Logic(StoryReader reader) {
         this.reader = reader;
+        continueGame = true;
     }
 
     public int getPoints() {
@@ -51,6 +52,7 @@ public class Logic {
             } else {
                 points = points + getReplyPoints(buttonNumber);
                 finalLine = 1;
+                line = 0;
                 continueGame = false;
             }
         } else if (line == 2 || line == 3) {
@@ -65,30 +67,36 @@ public class Logic {
             } else {
                 points = points + getReplyPoints(buttonNumber);
                 finalLine = 1;
+                line = 0;
                 continueGame = false;
             }
         } else if (line == 4) {
             if (buttonNumber == 1) {
                 points = points + getReplyPoints(buttonNumber);
                 finalLine = 3;
+                line = 0;
                 continueGame = false;
             } else if (buttonNumber == 2) {
                 points = points + getReplyPoints(buttonNumber);
                 finalLine = 4;
+                line = 0;
                 continueGame = false;
             } else {
                 points = points + getReplyPoints(buttonNumber);
                 finalLine = 2;
+                line = 0;
                 continueGame = false;
             }
         } else if (line == 5) {
             if (buttonNumber == 1) {
                 points = points + getReplyPoints(buttonNumber);
                 finalLine = 1;
+                line = 0;
                 continueGame = false;
             } else if (buttonNumber == 2) {
                 points = points + getReplyPoints(buttonNumber);
                 finalLine = 5;
+                line = 0;
                 continueGame = false;
             } else {
                 points = points + getReplyPoints(buttonNumber);
@@ -98,6 +106,7 @@ public class Logic {
         } else {
             points = points + getReplyPoints(buttonNumber);
             finalLine = 6;
+            line = 0;
             continueGame = false;
         }
     }

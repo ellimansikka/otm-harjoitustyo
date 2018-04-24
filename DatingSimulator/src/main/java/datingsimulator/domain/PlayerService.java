@@ -72,15 +72,25 @@ public class PlayerService {
 
         return true;
     }
-    
+
+    public boolean createResult(int points, String player) throws Exception {
+        Result result = new Result(points, player);
+        try {
+            resultDao.create(result);
+        } catch (Exception e) {
+            return false;
+        }
+        return true;
+    }
+
     public List<Result> getPlayersResults() {
         if (loggedIn == null) {
             return new ArrayList<>();
         }
-          
+
         return resultDao.getAll()
-            .stream()
-            .filter(t-> t.getPlayerName().equals(loggedIn.getName()))
-            .collect(Collectors.toList());
+                .stream()
+                .filter(r -> r.getPlayerName().equals(loggedIn.getName()))
+                .collect(Collectors.toList());
     }
 }

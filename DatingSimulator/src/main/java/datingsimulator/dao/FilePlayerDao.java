@@ -32,7 +32,7 @@ public class FilePlayerDao implements PlayerDao {
     private void save() throws Exception {
         try (FileWriter writer = new FileWriter(new File(file))) {
             for (Player player : players) {
-                writer.write(player.getName());
+                writer.write(player.getName() + "\n");
             }
         }
     }
@@ -50,8 +50,7 @@ public class FilePlayerDao implements PlayerDao {
 
     public Player findPlayer(String name) {
         return players.stream()
-                .filter(u -> u.getName()
-                        .equals(name))
+                .filter(p -> p.getName().equals(name))
                 .findFirst()
                 .orElse(null);
     }
