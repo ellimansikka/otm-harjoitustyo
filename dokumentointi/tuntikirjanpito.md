@@ -10,3 +10,5 @@ Päivä | Aika(h) | Mitä tein
 16.4. | 2 | Sovelluslogiikan tekeminen
 17.4. | 2 | Testien lisääminen
 17.4. | 1 | Sovelluksen kehittäminen
+21.4. | 1 | Sovelluksen kehittäminen
+23.4. | 4 | Testien lisääminen, sovelluksen kehittäminen
