@@ -13,4 +13,5 @@ Päivä | Aika(h) | Mitä tein
 21.4. | 1 | Sovelluksen kehittäminen
 23.4. | 4 | Testien lisääminen, sovelluksen kehittäminen
 24.4. | 2 | Sovelluksen kehittäminen
-yht. | 27.75 | -
+24.4. | 3 | Sovelluksen kehittäminen, sekvenssikaavion tekeminen
+yht. | 30.75 | -
