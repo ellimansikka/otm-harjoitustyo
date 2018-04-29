@@ -1,7 +1,9 @@
 # Arkkitehtuurikuvaus
 ## Rakenne
 Ohjelman koodin pakkausrakenne on seuraava
-(kuva)
+
+<img src="https://github.com/ellimansikka/otm-harjoitustyo/blob/master/dokumentointi/kuvat/rakenne.png">
+
 Pakkaus datingsimulator.ui sisältää käyttöliittymän, joka on toteutettu JavaFX:llä. datingsimulator.domain taas sisältää sovelluslogiikan ja datingsimulator.dao sisältää pysyväistallennuksesta vastaavan koodin ja tiedostojen lukijan.
 
 ## Sovelluslogiikka
@@ -10,6 +12,7 @@ Pakkaus datingsimulator.ui sisältää käyttöliittymän, joka on toteutettu Ja
 Luokka/pakkauskaavio:
 
 <img src="https://github.com/ellimansikka/otm-harjoitustyo/blob/master/dokumentointi/kuvat/pakkaus_luokkakaavio.png">
+
 
 ## Toiminnallisuudet
 Sisäänkirjautuminen:
