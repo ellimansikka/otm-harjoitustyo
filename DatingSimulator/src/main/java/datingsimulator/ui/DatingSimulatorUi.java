@@ -25,6 +25,7 @@ import datingsimulator.dao.FileResultDao;
 import datingsimulator.dao.FilePlayerDao;
 import datingsimulator.dao.StoryReader;
 import datingsimulator.domain.Logic;
+import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.logging.Level;
@@ -46,9 +47,6 @@ public class DatingSimulatorUi extends Application {
     private VBox resultNodes;
     private VBox gameNodes;
     private HBox gameButtons;
-    private Button button1;
-    private Button button2;
-    private Button button3;
 
     @Override
     public void init() throws Exception {
@@ -162,6 +160,84 @@ public class DatingSimulatorUi extends Application {
 //        redrawFinal();
 //        
 //    }
+    
+    
+    public void game(Stage primaryStage) throws Exception {
+        BorderPane gamePane = new BorderPane();
+        HBox answerBox = new HBox(20);
+        VBox gameBox = new VBox(100);
+        Button quitButton = new Button("Quit");
+        Button button1 = new Button();
+        Button button2 = new Button();
+        Button button3 = new Button();
+        button1.setPrefWidth(1000);
+        
+        
+        gameBox.getChildren().add(quitButton);
+        
+        if (logic.continueGame() == true) {
+            button1.setText(logic.getPlayersReplyToButton(1));
+            button2.setText(logic.getPlayersReplyToButton(2));
+            button3.setText(logic.getPlayersReplyToButton(3));
+            answerBox.getChildren().addAll(button1, button2, button3);
+            Label label = new Label(logic.getDatesReply());
+            label.setPrefSize(2000, 30);
+            
+            gameBox.getChildren().addAll(label, answerBox);
+            
+            button1.setOnAction(e -> {
+                try {
+                    update(primaryStage, gamePane, 1);
+                } catch (Exception ex) {
+                    Logger.getLogger(DatingSimulatorUi.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+            });
+            button2.setOnAction(e -> {
+                try {
+                    update(primaryStage, gamePane, 2);
+                } catch (Exception ex) {
+                    Logger.getLogger(DatingSimulatorUi.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+            });
+            button3.setOnAction(e -> {
+                try {
+                    update(primaryStage, gamePane, 3);
+                } catch (Exception ex) {
+                    Logger.getLogger(DatingSimulatorUi.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+            });
+        
+        } else {
+            Label label = new Label(logic.getFinalReply());
+            int points = logic.getPoints();
+            Label results = new Label("Result: " + Integer.toString(points));
+            service.createResult(points,  service.getLoggedInPlayer().getName());
+            gameBox.getChildren().addAll(label, results);
+            
+        }
+        
+        
+        gamePane.getChildren().add(gameBox);
+        gameScene = new Scene(gamePane, 1000, 1000);
+        
+        primaryStage.setScene(gameScene);
+        
+        quitButton.setOnAction(e -> {
+            primaryStage.setScene(playerScene);
+        });
+         
+        primaryStage.show();
+        
+    }
+    
+    public void update(Stage stage, BorderPane gamePane, int buttonNumber) throws Exception {
+        gamePane.getChildren().clear();
+        logic.findNextAndUpdate(buttonNumber);
+        game(stage);
+    }
 
     @Override
     public void start(Stage primaryStage) {
@@ -177,7 +253,7 @@ public class DatingSimulatorUi extends Application {
 
         textPane.getChildren().addAll(loginText, nameInput);
         Label loginMessage = new Label();
-
+        
         Button loginButton = new Button("Log in");
         Button createButton = new Button("Create new user");
 
@@ -268,29 +344,24 @@ public class DatingSimulatorUi extends Application {
         
         
         // game scene
-        VBox gamePane = new VBox(10);
 //        gameNodes = new VBox(10);
 //        gameNodes.setMaxWidth(900);
 //        gameNodes.setMinWidth(900);
-        Button quitButton = new Button("Quit");
 
-        gamePane.getChildren().addAll(quitButton);
+        
         playButton.setOnAction(e -> {
-            primaryStage.setScene(gameScene);
-//            logic = new Logic(storyReader);
-//            try {
-//                redrawGame();
-//                play();
-//            } catch (Exception ex) {
-//                
-//            }
+            logic = new Logic(storyReader);
+            try {
+                game(primaryStage);
+
+            } catch (Exception ex) {
+                Logger.getLogger(DatingSimulatorUi.class.getName()).log(Level.SEVERE, null, ex);
+            }
+           
         });
         
-        quitButton.setOnAction(e -> {
-            primaryStage.setScene(playerScene);
-        });
 
-        gameScene = new Scene(gamePane, 1000, 1000);
+        
 
         
         

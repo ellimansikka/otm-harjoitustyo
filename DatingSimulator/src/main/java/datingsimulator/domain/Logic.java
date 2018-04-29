@@ -5,14 +5,17 @@ import datingsimulator.dao.StoryReader;
 public class Logic {
 
     private StoryReader reader;
-    private int points = 0;
-    private int line = 1;
-    private int finalLine = 1;
+    private int points;
+    private int line;
+    private int finalLine;
     private boolean continueGame;
 
     public Logic(StoryReader reader) {
         this.reader = reader;
         continueGame = true;
+        line = 1;
+        finalLine = 1;
+        points = 0;
     }
 
     public int getPoints() {
@@ -113,7 +116,7 @@ public class Logic {
 
     private String[] getPlayersReplies(int line) throws Exception {
         String[] parts = getLine(line);
-        String[] replies = null;
+        String[] replies = new String[3];
         replies[0] = parts[1];
         replies[1] = parts[3];
         replies[2] = parts[5];
@@ -122,7 +125,7 @@ public class Logic {
 
     private int getReplyPoints(int buttonNumber) throws Exception {
         String[] parts = getLine(line);
-        int[] points = null;
+        int[] points = new int[3];
         points[0] = Integer.parseInt(parts[2]);
         points[1] = Integer.parseInt(parts[4]);
         points[2] = Integer.parseInt(parts[6]);
@@ -130,13 +133,9 @@ public class Logic {
     }
 
     private String[] getLine(int line) throws Exception {
-        try {
-            String[] part = reader.getPartOfStory(line);
-            return part;
-        } catch (Exception e) {
+        String[] part = reader.getPartOfStory(line);
+        return part;
 
-        }
-        return null;
     }
 
 }
