@@ -18,4 +18,4 @@ Päivä | Aika(h) | Mitä tein
 29.4. | 2 | Yritin saada peliä toimimaan mutta ei
 2.5. | 1 | Käyttöohjeen ja arkkitehtuurikuvauksen kirjoittaminen
 2.5. | 2 | JavaDocien kirjoittaminen
-yht. | 35.75 | -
+yht. | 37.75 | -
