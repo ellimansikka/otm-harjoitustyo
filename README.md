@@ -33,6 +33,16 @@ mvn package
 
 generoi hakemistoon _target_ suoritettavan jar-tiedoston _DatingSimulator-1.0-SNAPSHOT.jar_
 
+### JavaDoc
+
+JavaDoc generoidaan komennolla
+
+```
+mvn javadoc:javadoc
+```
+
+JavaDocia voi tarkastella avaamalla selaimella tiedosto _target/site/apidocs/index.html_
+
 ### Checkstyle
 
 Tiedostoon [checkstyle.xml](https://github.com/mluukkai/OtmTodoApp/blob/master/checkstyle.xml) määrittelemät tarkistukset suoritetaan komennolla
