@@ -14,4 +14,7 @@ Päivä | Aika(h) | Mitä tein
 23.4. | 4 | Testien lisääminen, sovelluksen kehittäminen
 24.4. | 2 | Sovelluksen kehittäminen
 24.4. | 3 | Sovelluksen kehittäminen, sekvenssikaavion tekeminen
-yht. | 30.75 | -
+26.4. | 2 | Sovelluksen kehittäminen, pelin käyttöliittymän muokkaaminen
+29.4. | 2 | Yritin saada peliä toimimaan mutta ei
+2.5. | 1 | Käyttöohjeen ja arkkitehtuurikuvauksen kirjoittaminen
+yht. | 35.75 | -
