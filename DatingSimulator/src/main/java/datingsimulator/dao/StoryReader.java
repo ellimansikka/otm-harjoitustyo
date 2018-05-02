@@ -6,7 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-//Reads the part of the story that is needed.
+/**
+ * Reads the part of the story that is needed.
+ *
+ * @author ellimans
+ */
 public class StoryReader {
 
     private File story;
@@ -18,6 +22,14 @@ public class StoryReader {
         finalAnswers = new File(finalAnswersFile);
     }
 
+    /**
+     * Finds the date's last answer in the game from the finalAnswers-file. The
+     * game ends after this answer.
+     *
+     * @param line number from the file
+     * @return date's last answer in the game
+     * @throws Exception
+     */
     public String getFinalAnswer(int line) throws Exception {
         String answer = null;
         int i = 1;
@@ -38,6 +50,14 @@ public class StoryReader {
         return null;
     }
 
+    /**
+     * Finds the part of the story from the story-file from the line that is
+     * given.
+     *
+     * @param line number from the file
+     * @return part of the story
+     * @throws Exception
+     */
     public String[] getPartOfStory(int line) throws Exception {
         String[] part = null;
         int i = 1;

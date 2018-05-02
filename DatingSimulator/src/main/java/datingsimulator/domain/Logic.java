@@ -2,6 +2,11 @@ package datingsimulator.domain;
 
 import datingsimulator.dao.StoryReader;
 
+/**
+ * Game logic class
+ *
+ * @author ellimans
+ */
 public class Logic {
 
     private StoryReader reader;
@@ -10,6 +15,11 @@ public class Logic {
     private int finalLine;
     private boolean continueGame;
 
+    /**
+     * Sets the starting parameters.
+     *
+     * @param reader StoryReader
+     */
     public Logic(StoryReader reader) {
         this.reader = reader;
         continueGame = true;
@@ -22,26 +32,58 @@ public class Logic {
         return points;
     }
 
+    /**
+     * Returns correct player's reply option to the button.
+     *
+     * @param buttonNumber 1-3
+     * @return reply option to the button
+     * @throws Exception
+     */
     public String getPlayersReplyToButton(int buttonNumber) throws Exception {
         String[] replies = getPlayersReplies(line);
         return replies[buttonNumber - 1];
     }
 
+    /**
+     * Returns correct date's reply
+     *
+     * @return date's reply
+     * @throws Exception
+     */
     public String getDatesReply() throws Exception {
         String[] parts = getLine(line);
         String reply = parts[0];
         return reply;
     }
 
+    /**
+     * Returns the correct final reply from the date. The game ends after.
+     *
+     * @return final reply
+     * @throws Exception
+     */
     public String getFinalReply() throws Exception {
         String finalAnswer = reader.getFinalAnswer(finalLine);
         return finalAnswer;
     }
 
+    /**
+     * Tells if the game should continue
+     *
+     * @return true if the game should continue, false if not
+     */
     public boolean continueGame() {
         return continueGame;
     }
 
+    /**
+     * Actual logic method. Determines whether the game continues and which line
+     * comes next based on the button that the player pushed and the current
+     * point of the story. Also adds points based on the button and line.
+     *
+     * @param buttonNumber 1-3
+     * @throws Exception
+     */
     public void findNextAndUpdate(int buttonNumber) throws Exception {
         if (line == 1) {
             if (buttonNumber == 1) {

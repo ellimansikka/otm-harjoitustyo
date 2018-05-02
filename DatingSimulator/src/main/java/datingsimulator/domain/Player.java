@@ -1,5 +1,10 @@
 package datingsimulator.domain;
 
+/**
+ * User class
+ *
+ * @author ellimans
+ */
 public class Player {
 
     private String name;

@@ -22,6 +22,7 @@ public class PlayerService {
     /**
      * logging in
      *
+     * @param name player's name
      *
      * @return true if the player name exists, otherwise false
      */
@@ -73,6 +74,15 @@ public class PlayerService {
         return true;
     }
 
+    /**
+     * creating a new result
+     *
+     * @param points points from game
+     *
+     * @param player player's name
+     *
+     * @return true if succeeded to create the result, if not then false
+     */
     public boolean createResult(int points, String player) throws Exception {
         Result result = new Result(points, player);
         try {
@@ -83,11 +93,16 @@ public class PlayerService {
         return true;
     }
 
+    /**
+     * Returns all the results of the player that has logged in
+     *
+     * @return results of the player
+     */
     public List<Result> getPlayersResults() {
         if (loggedIn == null) {
             return new ArrayList<>();
         }
-        List<Result> results = new ArrayList<>(); 
+        List<Result> results = new ArrayList<>();
         for (Result r : resultDao.getAll()) {
             if (r.getPlayerName().equals(loggedIn.getName())) {
                 results.add(r);

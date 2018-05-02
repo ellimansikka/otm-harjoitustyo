@@ -1,5 +1,10 @@
 package datingsimulator.domain;
 
+/**
+ * Player's result from the game
+ *
+ * @author ellimans
+ */
 public class Result {
 
     private int points;
