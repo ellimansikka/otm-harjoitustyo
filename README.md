@@ -7,6 +7,8 @@ Harjoitustyö kurssille Ohjelmistotekniikan menetelmät. Dating Simulator on pel
 
 [arkkitehtuuri.md](https://github.com/ellimansikka/otm-harjoitustyo/blob/master/dokumentointi/arkkitehtuuri.md)
 
+[kayttoohje.md](https://github.com/ellimansikka/otm-harjoitustyo/blob/master/dokumentointi/kayttoohje.md)
+
 ## Komentorivitoiminnot
 ### Testaus
 Testit suoritetaan komennolla
