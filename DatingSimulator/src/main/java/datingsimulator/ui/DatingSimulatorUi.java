@@ -170,7 +170,7 @@ public class DatingSimulatorUi extends Application {
         Button button1 = new Button();
         Button button2 = new Button();
         Button button3 = new Button();
-        button1.setPrefWidth(1000);
+        
         
         
         gameBox.getChildren().add(quitButton);
