@@ -2,16 +2,16 @@ package datingsimulator.domain;
 
 public class Result {
 
-    private int result;
+    private int points;
     private String player;
 
-    public Result(int result, String player) {
-        this.result = result;
+    public Result(int points, String player) {
+        this.points = points;
         this.player = player;
     }
 
     public int getResult() {
-        return result;
+        return points;
     }
 
     public String getPlayerName() {
