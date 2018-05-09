@@ -9,6 +9,11 @@ Harjoitustyö kurssille Ohjelmistotekniikan menetelmät. Dating Simulator on pel
 
 [kayttoohje.md](https://github.com/ellimansikka/otm-harjoitustyo/blob/master/dokumentointi/kayttoohje.md)
 
+## GitHub releaset
+[github release, viikko5](https://github.com/ellimansikka/otm-harjoitustyo/releases/tag/viikko5)
+
+[github release, viikko6](https://github.com/ellimansikka/otm-harjoitustyo/releases/tag/viikko6)
+
 ## Komentorivitoiminnot
 ### Testaus
 Testit suoritetaan komennolla
@@ -53,5 +58,3 @@ Tiedostoon [checkstyle.xml](https://github.com/mluukkai/OtmTodoApp/blob/master/c
 
 Mahdolliset virheilmoitukset selviävät avaamalla selaimella tiedosto _target/site/checkstyle.html_
 
-## GitHub release
-[github release, viikko5](https://github.com/ellimansikka/otm-harjoitustyo/releases/tag/viikko5)
