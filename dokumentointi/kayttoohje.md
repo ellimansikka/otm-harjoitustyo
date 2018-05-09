@@ -7,6 +7,16 @@ Ohjelma käynnistetään komennolla
 ```
 java -jar todoapp.jar
 ```
+## Konfigurointi
+
+Ohjelma olettaa, että sen käynnistyshakemistossa on konfiguraatiotiedosto _config.properties_, joka määrittelee käyttäjät ja tulokset tallettavien tiedostojen, ja tarinan sisältävien tiedostojen nimet. Tiedoston muoto on seuraava
+
+```
+playerFile=players.txt
+resultFile=results.txt
+storyFile=story.txt
+finalAnswersFile=story_final_answers.txt
+```
 
 ## Sisäänkirjautuminen
 
