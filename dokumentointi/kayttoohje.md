@@ -44,4 +44,6 @@ Uuden pelin voi aloittaa painamalla käyttäjän näkymässä painiketta _Play_.
 
 _Play_-napin painamisen jälkeen sovellus siirtyy pelinäkymään ja peli alkaa. Peliä pelataan valitsemalla sopiva vastaus ja painamalla sitä. Pelistä saa pisteitä perustuen pelaajan valitsemiin vastauksiin. Peli loppuu kun pelaaja valitsee huonoimman vastauksen, pääsee pelin läpi tai luovuttaa painamalla nappia _Quit_.
 
+<img src="https://github.com/ellimansikka/otm-harjoitustyo/blob/master/dokumentointi/kuvat/pelinakyma.png">
+
 Uloskirjautuminen tapahtuu painamalla pelaajan näkymässä nappia _Logout_.
