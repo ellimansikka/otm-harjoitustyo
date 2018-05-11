@@ -20,4 +20,5 @@ Päivä | Aika(h) | Mitä tein
 2.5. | 2 | JavaDocien kirjoittaminen
 10.5. | 1 | Dokumentoinnin muokkausta
 11.5. | 2 | Dokumentoinnin muokkausta/kirjoittamista
-yht. | 40.75 | -
+11.5. | 2 | Sovelluksen muokkaminen
+yht. | 42.75 | -
