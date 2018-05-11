@@ -103,69 +103,13 @@ public class DatingSimulatorUi extends Application {
             resultNodes.getChildren().add(createResultNode(result));
         });
     }
-//    
-//    public void redrawGame() throws Exception {
-//        gameNodes.getChildren().clear();
-//        gameButtons.getChildren().clear();
-//        gameButtons.setPadding(new Insets(10));
-//        
-//        button1 = new Button(logic.getPlayersReplyToButton(1));
-//        button2 = new Button(logic.getPlayersReplyToButton(2));
-//        button3 = new Button(logic.getPlayersReplyToButton(3));
-//        gameButtons.getChildren().addAll(button1, button2, button3);
-//        
-//        Label datesReply = new Label(logic.getDatesReply());
-//        gameNodes.getChildren().addAll(datesReply, gameButtons);
-//    }
-//    
-//    public void redrawFinal() throws Exception {
-//        gameNodes.getChildren().clear();
-//        gameButtons.getChildren().clear();
-//        
-//        Label datesReply = new Label(logic.getFinalReply());
-//        int points = logic.getPoints();
-//        Label results = new Label("Result: " + Integer.toString(points));
-//        service.createResult(points,  service.getLoggedInPlayer().getName());
-//        gameNodes.getChildren().addAll(datesReply, results);
-//    }
-//    
-//    public void play() throws Exception {
-//        while (logic.continueGame()) {
-//            
-//            button1.setOnAction(e -> {
-//                try {
-//                    logic.findNextAndUpdate(1);
-//                    redrawGame();
-//                } catch (Exception ex) {
-//                    
-//                }
-//            });
-//            button2.setOnAction(e -> {
-//                try {
-//                    logic.findNextAndUpdate(2);
-//                    redrawGame();
-//                } catch (Exception ex) {
-//                    
-//                }
-//            });
-//            button3.setOnAction(e -> {
-//                try {
-//                    logic.findNextAndUpdate(3);
-//                    redrawGame();
-//                } catch (Exception ex) {
-//                    
-//                }
-//            });
-//        }
-//        redrawFinal();
-//        
-//    }
-    
+
     
     public void game(Stage primaryStage) throws Exception {
         BorderPane gamePane = new BorderPane();
         HBox answerBox = new HBox(20);
         VBox gameBox = new VBox(100);
+        gamePane.setMinSize(5000, 5000);
         Button quitButton = new Button("Quit");
         Button button1 = new Button();
         Button button2 = new Button();
@@ -181,7 +125,7 @@ public class DatingSimulatorUi extends Application {
             button3.setText(logic.getPlayersReplyToButton(3));
             answerBox.getChildren().addAll(button1, button2, button3);
             Label label = new Label(logic.getDatesReply());
-            label.setPrefSize(2000, 30);
+            label.setPrefSize(2000, 300);
             
             gameBox.getChildren().addAll(label, answerBox);
             
@@ -221,7 +165,7 @@ public class DatingSimulatorUi extends Application {
         
         
         gamePane.getChildren().add(gameBox);
-        gameScene = new Scene(gamePane, 1000, 1000);
+        gameScene = new Scene(gamePane, 10000, 10000);
         
         primaryStage.setScene(gameScene);
         

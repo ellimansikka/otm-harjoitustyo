@@ -163,15 +163,21 @@ public class Logic {
         replies[1] = parts[3];
         replies[2] = parts[5];
         return replies;
+
     }
 
     private int getReplyPoints(int buttonNumber) throws Exception {
-        String[] parts = getLine(line);
-        int[] points = new int[3];
-        points[0] = Integer.parseInt(parts[2]);
-        points[1] = Integer.parseInt(parts[4]);
-        points[2] = Integer.parseInt(parts[6]);
-        return points[buttonNumber - 1];
+        if (buttonNumber > 0 && buttonNumber < 4) {
+            String[] parts = getLine(line);
+            int[] points = new int[3];
+            points[0] = Integer.parseInt(parts[2]);
+            points[1] = Integer.parseInt(parts[4]);
+            points[2] = Integer.parseInt(parts[6]);
+            return points[buttonNumber - 1];
+        } else {
+            return 0;
+        }
+
     }
 
     private String[] getLine(int line) throws Exception {

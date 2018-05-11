@@ -15,7 +15,7 @@ public class StoryReader {
 
     private File story;
     private File finalAnswers;
-    private Scanner reader;
+
 
     public StoryReader(String storyFile, String finalAnswersFile) {
         story = new File(storyFile);
@@ -34,7 +34,7 @@ public class StoryReader {
         String answer = null;
         int i = 1;
         try {
-            reader = new Scanner(finalAnswers);
+            Scanner reader = new Scanner(finalAnswers);
             while (reader.hasNextLine()) {
                 answer = reader.nextLine();
                 if (i == line) {
@@ -62,7 +62,7 @@ public class StoryReader {
         String[] part = null;
         int i = 1;
         try {
-            reader = new Scanner(story);
+            Scanner reader = new Scanner(story);
             while (reader.hasNextLine()) {
                 part = reader.nextLine().split(";");
                 if (i == line) {
