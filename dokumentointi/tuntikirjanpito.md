@@ -21,4 +21,5 @@ Päivä | Aika(h) | Mitä tein
 10.5. | 1 | Dokumentoinnin muokkausta
 11.5. | 2 | Dokumentoinnin muokkausta/kirjoittamista
 11.5. | 2 | Sovelluksen muokkaminen
-yht. | 42.75 | -
+11.5. | 1 | Viimeistely
+yht. | 43.75 | -
