@@ -6,6 +6,15 @@ Ohjelman koodin pakkausrakenne on seuraava
 
 Pakkaus datingsimulator.ui sisältää käyttöliittymän, joka on toteutettu JavaFX:llä. datingsimulator.domain taas sisältää sovelluslogiikan ja datingsimulator.dao sisältää pysyväistallennuksesta vastaavan koodin ja tiedostojen lukijan.
 
+## Käyttöliittymä
+Käyttöliittumä sisältää neljä erilaista näkymää
+- kirjautuminen
+- uuden käyttäjän luonti
+- käyttäjän parhaat tulokset -näkymä
+- Dating Simulator -pelinäkymä
+
+jokainen näkymistää on toteutettu omana Scene-oliona. Näkymistä yksi kerrallaan on näkyvänä eli sijoitettuna sovelluksen stageen. Käyttöliittymä on rakennettu ohjelmallisesti luokassa datingsimulator.ui.DatingSimulatorUi.
+
 ## Sovelluslogiikka
 Loogisen datamallin muodostavat luokat Player ja Result. Nämä kuvaavat sovelluksen käyttäjiä ja heidän saamiaan pisteitä pelistä. 
 
