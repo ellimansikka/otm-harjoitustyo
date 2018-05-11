@@ -66,6 +66,11 @@ public class DatingSimulatorUi extends Application {
         service = new PlayerService(resultDao, playerDao);
     }
 
+    /**
+     * Creates HBox for a result
+     * @param result
+     * @return box
+     */
     public Node createResultNode(int result) {
         HBox box = new HBox(10);
         Label label = new Label(Integer.toString(result));
@@ -80,6 +85,9 @@ public class DatingSimulatorUi extends Application {
     }
     
 
+    /**
+     * Redraws the top10 list of the player's results
+     */
     public void redrawResultList() {
         resultNodes.getChildren().clear();
         List<Result> results = service.getPlayersResults();
@@ -104,7 +112,11 @@ public class DatingSimulatorUi extends Application {
         });
     }
 
-    
+    /**
+     * Creates the game scene and runs the ui of the game
+     * @param primaryStage
+     * @throws Exception 
+     */
     public void game(Stage primaryStage) throws Exception {
         BorderPane gamePane = new BorderPane();
         HBox answerBox = new HBox(20);
@@ -114,18 +126,20 @@ public class DatingSimulatorUi extends Application {
         Button button1 = new Button();
         Button button2 = new Button();
         Button button3 = new Button();
-        
-        
+        quitButton.setMinWidth(100);
+        button1.setMinWidth(420);
+        button2.setMinWidth(420);
+        button3.setMinWidth(420);
         
         gameBox.getChildren().add(quitButton);
         
-        if (logic.continueGame() == true) {
+        if (logic.continueGame()) {
             button1.setText(logic.getPlayersReplyToButton(1));
             button2.setText(logic.getPlayersReplyToButton(2));
             button3.setText(logic.getPlayersReplyToButton(3));
             answerBox.getChildren().addAll(button1, button2, button3);
             Label label = new Label(logic.getDatesReply());
-            label.setPrefSize(2000, 300);
+            label.setMinWidth(800);
             
             gameBox.getChildren().addAll(label, answerBox);
             
@@ -156,8 +170,10 @@ public class DatingSimulatorUi extends Application {
         
         } else {
             Label label = new Label(logic.getFinalReply());
+            label.setMinWidth(800);
             int points = logic.getPoints();
             Label results = new Label("Result: " + Integer.toString(points));
+            results.setMinWidth(200);
             service.createResult(points,  service.getLoggedInPlayer().getName());
             gameBox.getChildren().addAll(label, results);
             
@@ -177,6 +193,13 @@ public class DatingSimulatorUi extends Application {
         
     }
     
+    /**
+     * Updates the game.
+     * @param stage
+     * @param gamePane
+     * @param buttonNumber
+     * @throws Exception 
+     */
     public void update(Stage stage, BorderPane gamePane, int buttonNumber) throws Exception {
         gamePane.getChildren().clear();
         logic.findNextAndUpdate(buttonNumber);
@@ -285,12 +308,6 @@ public class DatingSimulatorUi extends Application {
         mainPane.setLeft(resultText);
         mainPane.setTop(menuPane);
 
-        
-        
-        // game scene
-//        gameNodes = new VBox(10);
-//        gameNodes.setMaxWidth(900);
-//        gameNodes.setMinWidth(900);
 
         
         playButton.setOnAction(e -> {
@@ -304,20 +321,18 @@ public class DatingSimulatorUi extends Application {
            
         });
         
-
-        
-
-        
+  
         
         // seutp primary stage
-        primaryStage.setTitle("Dating Simulator player");
+        primaryStage.setTitle("Dating Simulator");
         primaryStage.setScene(loginScene);
         primaryStage.show();
         primaryStage.setOnCloseRequest((WindowEvent e) -> {
             System.out.println("Closing");
             System.out.println(service.getLoggedInPlayer());
             if (service.getLoggedInPlayer() != null) {
-                e.consume();
+                service.logOut();
+                System.exit(0);
             }
 
         });
