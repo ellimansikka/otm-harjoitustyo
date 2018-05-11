@@ -14,6 +14,8 @@ Harjoitustyö kurssille Ohjelmistotekniikan menetelmät. Dating Simulator on pel
 
 [github release, viikko6](https://github.com/ellimansikka/otm-harjoitustyo/releases/tag/viikko6)
 
+[loppupalautus](https://github.com/ellimansikka/otm-harjoitustyo/releases/tag/loppupalautus)
+
 ## Komentorivitoiminnot
 ### Testaus
 Testit suoritetaan komennolla
