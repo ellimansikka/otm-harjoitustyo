@@ -1,7 +1,7 @@
 # Dating Simulator
 Harjoitustyö kurssille Ohjelmistotekniikan menetelmät. Dating Simulator on peli jossa pelaaja tapaa henkilöitä ja yritettävä päästä treffeille tämän kanssa reagoimalla henkilön puheisiin.
 ## Dokumentaatio
-[alustava_maarittelydokumentti.md](https://github.com/ellimansikka/otm-harjoitustyo/blob/master/dokumentointi/alustava_maarittelydokumentti.md)
+[vaatimusmaarittely.md](https://github.com/ellimansikka/otm-harjoitustyo/blob/master/dokumentointi/alustava_maarittelydokumentti.md)
 
 [tuntikirjanpito.md](https://github.com/ellimansikka/otm-harjoitustyo/blob/master/dokumentointi/tuntikirjanpito.md)
 
