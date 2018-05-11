@@ -17,4 +17,6 @@ Molempien DAO-luokkien toiminnallisuus on testattu hyödyntämällä JUnitin Tem
 tilapäinen tiedosto.
 
 ### Testikattavuus
-Sovelluksen testikattavuus on 41% ja haarautumakattavuus on 38%, kun ei oteta huomioon käyttöliittymäkerrosta.
+Sovelluksen testikattavuus on 41% ja haarautumakattavuus on 38%, kun ei oteta huomioon käyttöliittymäkerrosta. Testikattavuus on siis melko alhainen.
+<img src="https://github.com/ellimansikka/otm-harjoitustyo/blob/master/dokumentointi/kuvat/testikattavuus.png">
+Testaamatta jäävät kokonaan _Logic_-luokka sekä _StoryReader_-luokka.
