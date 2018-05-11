@@ -56,7 +56,17 @@ Käyttäjien tulokset tallettavan tiedoston formaatti on seuraava
 
 Eli ensin on tulos ja sen jälkeen puolipisteellä erotettuna käyttäjän nimi.
 
-## Toiminnallisuudet
-Sisäänkirjautuminen:
+### Toiminnallisuudet
+#### Sisäänkirjautuminen:
+Kun kirjautumisnäkymässä on syötekenttään kirjoitettu käyttäjätunnus ja klikataan nappia loginButton etenee sovelluksen kontrolli seuraavasti:
 
-<img src="https://github.com/ellimansikka/otm-harjoitustyo/blob/master/dokumentointi/kuvat/sekvenssikaavio_DatingSimulator_login.png">
+<img src="https://github.com/ellimansikka/otmharjoitustyo/blob/master/dokumentointi/kuvat/sekvenssikaavio_DatingSimulator_login.png">
+
+Napin painamiseen reagoiva tapahtumankäsittelijä kutsuu sovelluslogiikan _playerService_ metodia login antaen parametriksi kirjautuneen käyttäjän nimen. Sovelluslogiikka selvittää _playerDao_:n avulla onko käyttäjätunnus olemassa. Jos käyttäjä on olemassa, eli kirjautuminen onnistuu, vaihtaa käyttölittymä näkymäksi _playerScenen_, eli sovelluksen varsinaisen päänäkymän ja renderöi näkymään kirjautuneen käyttäjän kymmenen parasta tulosta.
+
+#### Uuden käyttäjän luominen:
+Kun uuden käyttäjän luomisnäkymässä on syötetty käyttäjätunnus, joka ei ole jo käytössä ja painetaan nappia createButton etenee sovelluksen kontrolli seuraavasti:
+
+<img src="https://github.com/ellimansikka/otm-harjoitustyo/blob/master/dokumentointi/kuvat/sekvenssikaavio_DatingSimulator_newUser.png">
+
+Tapahtumakäsittelijä kutsuu sovelluslogiikan metodia _createPlayer_ antaen parametriksi luotavan käyttäjän nimen. Sovelluslogiikka selvittää _playerDao_:n avulla onko käyttäjätunnus olemassa. Jos käyttäjää ei ole olemassa, eli uuden käyttäjän luominen on mahdollista, luo sovelluslogiikka _Player_-olion ja tallentaa sen kutsumalla _playerDao_:n metodia create. Tästä seuraa että käyttöliittymä vaihtaa näkymäksi _loginScenen_ eli kirjautumisnäkymän.
