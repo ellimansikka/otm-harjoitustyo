@@ -30,6 +30,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.WindowEvent;
 
 public class DatingSimulatorUi extends Application {
@@ -47,6 +49,9 @@ public class DatingSimulatorUi extends Application {
     private VBox resultNodes;
     private VBox gameNodes;
     private HBox gameButtons;
+    private Image image1;
+    private Image image2;
+    private Image image3;
 
     @Override
     public void init() throws Exception {
@@ -64,6 +69,10 @@ public class DatingSimulatorUi extends Application {
         storyReader = new StoryReader(storyFile, finalAnswersFile);
         
         service = new PlayerService(resultDao, playerDao);
+        
+        image1 = new Image(new FileInputStream("kuva1.png"));
+        image2 = new Image(new FileInputStream("kuva2.png"));
+        image3 = new Image(new FileInputStream("kuva3.png"));
     }
 
     /**
@@ -120,8 +129,8 @@ public class DatingSimulatorUi extends Application {
     public void game(Stage primaryStage) throws Exception {
         BorderPane gamePane = new BorderPane();
         HBox answerBox = new HBox(20);
-        VBox gameBox = new VBox(100);
-        gamePane.setMinSize(5000, 5000);
+        VBox gameBox = new VBox(20);
+        
         Button quitButton = new Button("Quit");
         Button button1 = new Button();
         Button button2 = new Button();
@@ -134,6 +143,14 @@ public class DatingSimulatorUi extends Application {
         gameBox.getChildren().add(quitButton);
         
         if (logic.continueGame()) {
+            ImageView imageView = new ImageView(image1);
+            if (logic.getImageNumber() == 1) {
+                imageView = new ImageView(image1);
+            } else if (logic.getImageNumber() == 2) {
+                imageView = new ImageView(image2);
+            } else {
+                imageView = new ImageView(image3);
+            }
             button1.setText(logic.getPlayersReplyToButton(1));
             button2.setText(logic.getPlayersReplyToButton(2));
             button3.setText(logic.getPlayersReplyToButton(3));
@@ -141,7 +158,7 @@ public class DatingSimulatorUi extends Application {
             Label label = new Label(logic.getDatesReply());
             label.setMinWidth(800);
             
-            gameBox.getChildren().addAll(label, answerBox);
+            gameBox.getChildren().addAll(imageView, label, answerBox);
             
             button1.setOnAction(e -> {
                 try {
@@ -171,11 +188,19 @@ public class DatingSimulatorUi extends Application {
         } else {
             Label label = new Label(logic.getFinalReply());
             label.setMinWidth(800);
+            ImageView imageView = new ImageView(image1);
+            if (logic.getImageNumber() == 1) {
+                imageView = new ImageView(image1);
+            } else if (logic.getImageNumber() == 2) {
+                imageView = new ImageView(image2);
+            } else {
+                imageView = new ImageView(image3);
+            }
             int points = logic.getPoints();
             Label results = new Label("Result: " + Integer.toString(points));
             results.setMinWidth(200);
             service.createResult(points,  service.getLoggedInPlayer().getName());
-            gameBox.getChildren().addAll(label, results);
+            gameBox.getChildren().addAll(imageView, label, results);
             
         }
         
@@ -186,6 +211,7 @@ public class DatingSimulatorUi extends Application {
         primaryStage.setScene(gameScene);
         
         quitButton.setOnAction(e -> {
+            redrawResultList();
             primaryStage.setScene(playerScene);
         });
          
@@ -232,6 +258,7 @@ public class DatingSimulatorUi extends Application {
                 primaryStage.setScene(playerScene);
                 redrawResultList();
                 nameInput.setText("");
+                primaryStage.setTitle("Dating Simulator Player: " + service.getLoggedInPlayer().getName());
             } else {
                 loginMessage.setText("User does not exist");
                 loginMessage.setTextFill(Color.RED);
@@ -301,8 +328,8 @@ public class DatingSimulatorUi extends Application {
         Label resultText = new Label("Top 10 Results");
 
         resultNodes = new VBox(10);
-        resultNodes.setMaxWidth(150);
-        resultNodes.setMinWidth(150);
+        resultNodes.setMaxWidth(200);
+        resultNodes.setMinWidth(200);
 
         resultsScrollbar.setContent(resultNodes);
         mainPane.setLeft(resultText);

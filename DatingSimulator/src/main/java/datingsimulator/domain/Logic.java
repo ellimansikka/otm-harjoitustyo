@@ -14,6 +14,7 @@ public class Logic {
     private int line;
     private int finalLine;
     private boolean continueGame;
+    private int imageNumber;
 
     /**
      * Sets the starting parameters.
@@ -26,6 +27,7 @@ public class Logic {
         line = 1;
         finalLine = 1;
         points = 0;
+        imageNumber = 1;
     }
 
     public int getPoints() {
@@ -68,6 +70,15 @@ public class Logic {
     }
 
     /**
+     * Returns the number of the image that needs to be shown
+     *
+     * @return imageNumber
+     */
+    public int getImageNumber() {
+        return imageNumber;
+    }
+
+    /**
      * Tells if the game should continue
      *
      * @return true if the game should continue, false if not
@@ -89,30 +100,36 @@ public class Logic {
             if (buttonNumber == 1) {
                 points = points + getReplyPoints(buttonNumber);
                 line = 2;
+                imageNumber = 1;
                 continueGame = true;
             } else if (buttonNumber == 2) {
                 points = points + getReplyPoints(buttonNumber);
                 line = 3;
+                imageNumber = 2;
                 continueGame = true;
             } else {
                 points = points + getReplyPoints(buttonNumber);
                 finalLine = 1;
                 line = 0;
+                imageNumber = 3;
                 continueGame = false;
             }
         } else if (line == 2 || line == 3) {
             if (buttonNumber == 1) {
                 points = points + getReplyPoints(buttonNumber);
                 line = 4;
+                imageNumber = 1;
                 continueGame = true;
             } else if (buttonNumber == 2) {
                 points = points + getReplyPoints(buttonNumber);
                 line = 5;
+                imageNumber = 2;
                 continueGame = true;
             } else {
                 points = points + getReplyPoints(buttonNumber);
                 finalLine = 1;
                 line = 0;
+                imageNumber = 3;
                 continueGame = false;
             }
         } else if (line == 4) {
@@ -120,16 +137,19 @@ public class Logic {
                 points = points + getReplyPoints(buttonNumber);
                 finalLine = 3;
                 line = 0;
+                imageNumber = 2;
                 continueGame = false;
             } else if (buttonNumber == 2) {
                 points = points + getReplyPoints(buttonNumber);
                 finalLine = 4;
                 line = 0;
+                imageNumber = 3;
                 continueGame = false;
             } else {
                 points = points + getReplyPoints(buttonNumber);
                 finalLine = 2;
                 line = 0;
+                imageNumber = 1;
                 continueGame = false;
             }
         } else if (line == 5) {
@@ -137,21 +157,25 @@ public class Logic {
                 points = points + getReplyPoints(buttonNumber);
                 finalLine = 1;
                 line = 0;
+                imageNumber = 3;
                 continueGame = false;
             } else if (buttonNumber == 2) {
                 points = points + getReplyPoints(buttonNumber);
                 finalLine = 5;
                 line = 0;
+                imageNumber = 1;
                 continueGame = false;
             } else {
                 points = points + getReplyPoints(buttonNumber);
                 line = 6;
+                imageNumber = 1;
                 continueGame = true;
             }
         } else {
             points = points + getReplyPoints(buttonNumber);
             finalLine = 6;
             line = 0;
+            imageNumber = 2;
             continueGame = false;
         }
     }
